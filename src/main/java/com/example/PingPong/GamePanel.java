@@ -4,7 +4,7 @@ import java.awt.event.*;
 import java.util.*;
 import javax.swing.*;
 
-public class GamePanel {
+public class GamePanel extends JPanel implements Runnable {
 
     GamePanel() {
 
