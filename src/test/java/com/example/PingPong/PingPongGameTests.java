@@ -1,13 +1,26 @@
 package com.example.PingPong;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import javax.swing.*;
+import java.awt.*;
 
-@SpringBootTest
 class PingPongGameTests {
 
-	@Test
-	void contextLoads() {
-	}
+	GamePanel panel;
 
+	@Test
+	void createFrame() {
+
+		GameFrame frame = new GameFrame();
+		panel = new GamePanel();
+		frame.add(panel);
+		frame.setTitle("Ping-Pong Game");
+		frame.setResizable(false);
+		frame.setBackground(Color.black);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.pack();
+		frame.setVisible(true);
+		frame.setLocationRelativeTo(null);
+
+	}
 }
