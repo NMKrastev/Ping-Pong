@@ -5,13 +5,13 @@ import org.junit.jupiter.api.Test;
 
 class PingPongGameTests {
 
-	//Checks title of the game
+	//Checks title of the game.
+	//Due to issue with Jenkins X11
 	@Test
 	void checkTitle() {
 		GameFrame frame = new GameFrame();
-		String title = frame.getTitle();
-		frame.setTitle("Ping-Pong Game");
-		Assertions.assertEquals(frame.getTitle(), title);
+		String title = "Ping-Pong Game";
+		Assertions.assertEquals(title, frame.getTitle());
 	}
 
 	//Checks window dimensions
@@ -33,5 +33,4 @@ class PingPongGameTests {
 	void checkBallDiameter() {
 		Assertions.assertEquals(20, GamePanel.BALL_DIAMETER);
 	}
-
 }
