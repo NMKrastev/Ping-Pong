@@ -36,7 +36,6 @@ public class GamePanel extends JPanel implements Runnable {
     }
 
     public void  newBall() {
-        //random = new Random();
         ball = new Ball((GAME_WIDTH / 2) - (BALL_DIAMETER / 2),
                 (GAME_HEIGHT / 2)- (BALL_DIAMETER / 2),
                 BALL_DIAMETER, BALL_DIAMETER);
@@ -111,6 +110,20 @@ public class GamePanel extends JPanel implements Runnable {
         }
         if (paddleTwo.y >= (GAME_HEIGHT - PADDLE_HEIGHT)) {
             paddleTwo.y = GAME_HEIGHT - PADDLE_HEIGHT;
+        }
+
+        //Scorecard - checks if one of the players has scored
+        if (ball.x <= 0) {
+            score.playerTwo++;
+            newPaddles();
+            newBall();
+            System.out.println("Player Two: " + score.playerTwo);
+        }
+        if (ball.x >= GAME_WIDTH - BALL_DIAMETER) {
+            score.playerOne++;
+            newPaddles();
+            newBall();
+            System.out.println("Player One: " + score.playerOne);
         }
     }
     public void run() {
