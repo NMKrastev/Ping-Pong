@@ -56,10 +56,23 @@ public class GamePanel extends JPanel implements Runnable {
         paddleTwo.draw(g);
     }
     public void move() {
-
+        paddleOne.move();
+        paddleTwo.move();
     }
     public void checkCollision() {
-
+        //Stop paddles at widows frame edges
+        if (paddleOne.y <= 0) {
+            paddleOne.y = 0;
+        }
+        if (paddleOne.y >= (GAME_HEIGHT - PADDLE_HEIGHT)) {
+            paddleOne.y = GAME_HEIGHT - PADDLE_HEIGHT;
+        }
+        if (paddleTwo.y <= 0) {
+            paddleTwo.y = 0;
+        }
+        if (paddleTwo.y >= (GAME_HEIGHT - PADDLE_HEIGHT)) {
+            paddleTwo.y = GAME_HEIGHT - PADDLE_HEIGHT;
+        }
     }
     public void run() {
         long lastTime = System.nanoTime();
