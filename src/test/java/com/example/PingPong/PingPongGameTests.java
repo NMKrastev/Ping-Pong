@@ -1,37 +1,37 @@
 package com.example.PingPong;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import javax.swing.*;
-import java.awt.*;
-import java.util.Random;
 
 class PingPongGameTests {
 
-	static final int GAME_WIDTH = 1000;
-	static final int GAME_HEIGHT = (int)(GAME_WIDTH * (0.5555));
-	static final int PADDLE_WIDTH = 25;
-	static final int PADDLE_HEIGHT = 100;
-	PaddleTest paddleOne;
-	PaddleTest paddleTwo;
-
+	//Checks title of the game
 	@Test
-	void createPaddles() {
-
-		paddleOne = new PaddleTest(0,(GAME_HEIGHT / 2) - (PADDLE_HEIGHT / 2),
-				PADDLE_WIDTH, PADDLE_HEIGHT, 1);
-		paddleTwo = new PaddleTest(GAME_WIDTH - PADDLE_WIDTH, (GAME_WIDTH / 2) - (PADDLE_HEIGHT / 2),
-				PADDLE_WIDTH, PADDLE_HEIGHT, 2);
-
+	void checkTitle() {
+		GameFrame frame = new GameFrame();
+		String title = frame.getTitle();
+		frame.setTitle("Ping-Pong Game");
+		Assertions.assertEquals(frame.getTitle(), title);
 	}
 
-	public class PaddleTest extends Rectangle {
-
-		int id;
-		//int yVelocity;
-
-		PaddleTest(int x, int y, int PADDLE_WIDTH, int PADDLE_HEIGHT, int id) {
-			super(x, y, PADDLE_WIDTH, PADDLE_HEIGHT);
-			this.id = id;
-		}
+	//Checks window dimensions
+	@Test
+	void checkWindowDimensions() {
+		Assertions.assertEquals(1000, GamePanel.GAME_WIDTH);
+		Assertions.assertEquals((int)(1000 * 0.5555), GamePanel.GAME_HEIGHT);
 	}
+
+	//Checks if the paddles dimensions
+	@Test
+	void checkPaddleDimensions() {
+		Assertions.assertEquals(25, GamePanel.PADDLE_WIDTH);
+		Assertions.assertEquals(100, GamePanel.PADDLE_HEIGHT);
+	}
+
+	//Checks ball diameter
+	@Test
+	void checkBallDiameter() {
+		Assertions.assertEquals(20, GamePanel.BALL_DIAMETER);
+	}
+
 }
