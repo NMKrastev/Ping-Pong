@@ -13,23 +13,6 @@ class PingPongGameTests {
 	static final int PADDLE_HEIGHT = 100;
 	PaddleTest paddleOne;
 	PaddleTest paddleTwo;
-	//GamePanel panel;
-
-/*	@Test
-	void createFrame() {
-
-		GameFrame frame = new GameFrame();
-		panel = new GamePanel();
-		frame.add(panel);
-		frame.setTitle("Ping-Pong Game");
-		frame.setResizable(false);
-		frame.setBackground(Color.black);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.pack();
-		frame.setVisible(true);
-		frame.setLocationRelativeTo(null);
-
-	}*/
 
 	@Test
 	void createPaddles() {
@@ -44,7 +27,7 @@ class PingPongGameTests {
 	public class PaddleTest extends Rectangle {
 
 		int id;
-		int yVelocity;
+		//int yVelocity;
 
 		PaddleTest(int x, int y, int PADDLE_WIDTH, int PADDLE_HEIGHT, int id) {
 			super(x, y, PADDLE_WIDTH, PADDLE_HEIGHT);
