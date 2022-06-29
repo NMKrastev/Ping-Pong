@@ -13,9 +13,9 @@ class PingPongGameTests {
 	static final int PADDLE_HEIGHT = 100;
 	PaddleTest paddleOne;
 	PaddleTest paddleTwo;
-	GamePanel panel;
+	//GamePanel panel;
 
-	@Test
+/*	@Test
 	void createFrame() {
 
 		GameFrame frame = new GameFrame();
@@ -29,7 +29,7 @@ class PingPongGameTests {
 		frame.setVisible(true);
 		frame.setLocationRelativeTo(null);
 
-	}
+	}*/
 
 	@Test
 	void createPaddles() {
