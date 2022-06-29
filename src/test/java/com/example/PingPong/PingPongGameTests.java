@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import javax.swing.*;
 import static java.awt.Color.*;
-import static java.awt.Color.blue;
 
 class PingPongGameTests {
 
