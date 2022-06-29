@@ -70,7 +70,7 @@ public class GamePanel extends JPanel implements Runnable {
             ball.setYDirection(-ball.yVelocity);
         }
         if(ball.y >= GAME_HEIGHT - BALL_DIAMETER){
-            ball.setXDirection(-ball.yVelocity);
+            ball.setYDirection(-ball.yVelocity);
         }
         //Stop paddles at widows frame edges
         if (paddleOne.y <= 0) {
